@@ -6,10 +6,18 @@ import AddContactForm from './components/AddContactForm/AddContactForm';
 import EditContactForm from './components/EditContactForm/EditContactForm';
 
 
-function App() {
+export default function App() {
   const [contacts, setContacts] = useState([]);
   const [currentPage, setCurrentPage] = useState('contacts')
   const [contactToEdit, setContactToEdit] = useState()
+
+  const goToContactList = () => {
+    setCurrentPage('contacts')
+  }
+
+  const goToAddContactForm = () => {
+    setCurrentPage('addContact')
+  }
 
   function deleteContactById(person) {
     let localContacts = JSON.parse(localStorage.getItem('localContacts'));
@@ -40,8 +48,8 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <Button name="All contacts" onClick={() => setCurrentPage('contacts')} />
-        <Button name="Add contact" onClick={() => setCurrentPage('addContact')} />
+        <Button name="All contacts" onClick={goToContactList} />
+        <Button name="Add contact" onClick={goToAddContactForm} />
       </header>
 
       {currentPage === 'contacts' && <ContactList contacts={contacts} setCurrentPage={setCurrentPage} deleteContactById={deleteContactById} setContactToEdit={setContactToEdit} />}
@@ -52,4 +60,3 @@ function App() {
   );
 }
 
-export default App;

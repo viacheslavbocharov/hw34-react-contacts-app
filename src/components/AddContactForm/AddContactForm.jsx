@@ -6,6 +6,10 @@ export default function AddContactForm({ setCurrentPage, setContacts }) {
 
   const [errors, setErrors] = useState({});
 
+  const goToContactList = () => {
+    setCurrentPage('contacts')
+  }
+
   function validateForm(name, surname, phone) {
     const newErrors = {};
 
@@ -66,13 +70,15 @@ export default function AddContactForm({ setCurrentPage, setContacts }) {
       setContacts(localContacts);
       setCurrentPage('contacts');
     }
+
+ 
   }
 
   return (
     <>
       <div className='form-header'>
         <h3 >Add contact form</h3>
-        <input type="button" value="Cancel" onClick={() => setCurrentPage('contacts')} />
+        <input type="button" value="Cancel" onClick={goToContactList} />
       </div>
       <form className='form' name="form">
         <input type="text" name="name" placeholder='Name' />

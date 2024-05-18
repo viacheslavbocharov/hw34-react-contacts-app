@@ -8,6 +8,10 @@ export default function EditContactForm({ setCurrentPage, contactToEdit, setCont
 
   const [errors, setErrors] = useState({});
 
+  const goToContactList = () => {
+    setCurrentPage('contacts')
+  }
+
   function validateForm(name, surname, phone) {
     const newErrors = {};
 
@@ -60,7 +64,7 @@ export default function EditContactForm({ setCurrentPage, contactToEdit, setCont
     <>
       <div className='form-header'>
         <h3 >Edit contact form</h3>
-        <input type="button" value="Cancel" onClick={() => setCurrentPage('contacts')} />
+        <input type="button" value="Cancel" onClick={goToContactList} />
       </div>
       <form className='form' name="form">
         <input type="text" name="name" placeholder='Name' defaultValue={contactToEdit.name} />
