@@ -19,7 +19,9 @@ export default function App() {
     setCurrentPage('addContact')
   }
 
-  function deleteContactById(person) {
+
+
+  const deleteContactById = (person) => {
     let localContacts = JSON.parse(localStorage.getItem('localContacts'));
     localContacts = localContacts.filter(contact => contact.id !== person.id);
     localStorage.setItem('localContacts', JSON.stringify(localContacts));
@@ -42,8 +44,7 @@ export default function App() {
         .catch(error => console.error('Error fetching contacts:', error));
     }
   }, []);
-
-
+ 
 
   return (
     <div className="App">
