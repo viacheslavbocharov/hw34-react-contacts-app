@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Leanne",
+    "surname": "Graham",
+    "phone": "+44 7700 900001"
+  },
+  {
+    "id": 2,
+    "name": "Ervin",
+    "surname": "Howell",
+    "phone": "+44 7700 900002"
+  },
+  {
+    "id": 3,
+    "name": "Clementine",
+    "surname": "Bauch",
+    "phone": "+44 7700 900003"
+  },
+  {
+    "id": 4,
+    "name": "Patricia",
+    "surname": "Lebsack",
+    "phone": "+44 7700 900004"
+  },
+  {
+    "id": 5,
+    "name": "Chelsey",
+    "surname": "Dietrich",
+    "phone": "+44 7700 900005"
+  }
+]

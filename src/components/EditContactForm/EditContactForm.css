@@ -1,0 +1,16 @@
+.form{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 250px;
+    margin-inline: auto;
+}
+
+.form-header{
+    max-width: 250px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
