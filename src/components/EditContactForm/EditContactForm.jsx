@@ -1,16 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 import './EditContactForm.css'
+import { useNavigate } from "react-router-dom";
 
 
 
-export default function EditContactForm({ setCurrentPage, contactToEdit, setContacts }) {
+export default function EditContactForm({ contactToEdit, setContacts }) {
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
-  const goToContactList = () => {
-    setCurrentPage('contacts')
-  }
 
   function validateForm(name, surname, phone) {
     const newErrors = {};
@@ -56,7 +55,7 @@ export default function EditContactForm({ setCurrentPage, contactToEdit, setCont
       localContacts[indexContactToEdit] = contact;
       localStorage.setItem('localContacts', JSON.stringify(localContacts));
       setContacts(localContacts)
-      setCurrentPage('contacts');
+      navigate('/')
     }
   }
 
@@ -64,7 +63,7 @@ export default function EditContactForm({ setCurrentPage, contactToEdit, setCont
     <>
       <div className='form-header'>
         <h3 >Edit contact form</h3>
-        <input type="button" value="Cancel" onClick={goToContactList} />
+        <input type="button" value="Cancel" onClick={() => navigate('/')} />
       </div>
       <form className='form' name="form">
         <input type="text" name="name" placeholder='Name' defaultValue={contactToEdit.name} />
